@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+<body>
+    <div id="welcomeMessage"></div>
+    <div id="userActions"></div>
+
+    <script>
+        // Extract query parameters from URL
+        const params = new URLSearchParams(window.location.search);
+        const nombre = params.get('nombre');
+        const rol = params.get('rol');
+
+        // Display welcome message based on user's role
+        const welcomeMessage = document.getElementById('welcomeMessage');
+        welcomeMessage.textContent = `Welcome back, ${nombre} (${rol})!`;
+
+        // Display user-specific actions based on role
+        const userActions = document.getElementById('userActions');
+            userActions.innerHTML = `
+            `;
+    </script>
+</body>
+</html>

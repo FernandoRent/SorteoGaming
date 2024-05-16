@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="en">
+<head>
+    <title>Admin</title>
+    <link rel="stylesheet" href="StylesAdmin.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/plugins/plugin.zoom.min.js"></script>
+</head>
+<body>
+
+    <div class="main">
+        <header class="Encabezado">
+            <div class="Encabezado-Publicidad">
+                <p id="messageContainer">Prueba tu suerte 🍀 por solo $75 podrías ganar hasta $100,000</p>
+                <script src="MensajesPublicidad.js"></script>
+            </div>
+            <div class="Encabezado-Sorteos">
+                <a href="index.html">
+                    <img src="img/logo sorteos.png" style="width: 200px; height: auto;">
+                </a>
+            </div>
+
+            <nav class="navbar">
+                <a href="index.html" class="LoginNav" id="logoutBtn" >
+                    <img class="LoginImg" src="img/perfil.png">
+                    <p> Cerrar Sesión</p>
+                </a>
+            </nav>
+        </header>
+        
+        <div class="Container">
+            <h1 id="adminWelcome">Bienvenido (Admin Name)</h1>
+            <div class="Content">
+                <div class="Active-Members">
+                    <div class="Active-Members-Box">
+                        Miembros Online<br> 
+                        Conduce y Gana
+                    </div>
+                    <div class="Active-Members-Box">
+                        Miembros Online<br> 
+                        Borrego Valiente
+                    </div>
+                    <div class="Active-Members-Box">
+                        Miembros Online<br>
+                        Plinko
+                    </div>
+                    <div class="Active-Members-Box">
+                        Total Miembros Online
+                    </div>
+                </div>
+
+                <div class="Income-Graph">
+                    <canvas id="grafica-ingresos" width=auto height="80"></canvas>
+                    <script src="IncomeGraph.js"></script>
+                </div>
+            </div>
+    
+        </div>
+
+    </div>
+
+    <script>
+        // Extract query parameters from URL
+        fetch('login_response.json')
+            .then(response => {
+                if (response.ok) {
+                    // If the file exists, execute the code inside the then block
+                    return response.json();
+                } else {
+                    // If the file doesn't exist, skip the then block and proceed to the else block
+                    throw new Error('login_response.json not found');
+                }
+            })
+            .then(data => {
+                // Code inside the if block will only execute if login_response.json exists
+                const adminName = data.userName;
+
+                // Update the welcome message with the administrator's name
+                const adminWelcome = document.getElementById('adminWelcome');
+                adminWelcome.textContent = `Bienvenido ${adminName}`;
+            })
+            .catch(error => {
+                console.error('Error fetching JSON:', error);
+            });
+
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            // Send POST request to logout endpoint
+            fetch('http://localhost:3000/logout', {
+                method: 'POST'
+            })
+            .catch(error => {
+                console.error('Error logging out:', error);
+            });
+        });
+    </script>
+</body>
+</html>

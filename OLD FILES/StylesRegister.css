@@ -1,0 +1,182 @@
+*{
+    padding:0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.Encabezado-Publicidad {
+    background-color: #000000;
+    color: #ffffff; /* Color del texto */
+    padding: 10px;
+    text-align: center; /* Centrar el texto */
+    font-size: 18px; /* Tamaño de la letra */
+    height: 43px;
+}
+
+.Encabezado-Sorteos {
+    background-color: #223E92; /* Color del fondo */
+    height: 90px; /* Altura de la caja */
+    padding-top: 23px; /* Tamaño del relleno en la parte superior */
+    padding-right: 20px; /* Tamaño del relleno en el lado derecho */
+    padding-bottom: 10px; /* Tamaño del relleno en la parte inferior */
+    padding-left: 53px; /* Tamaño del relleno en el lado izquierdo */
+}
+
+.Container {
+    width: 800px; /* Ancho del contenedor */
+    min-height: 100px; /* Altura mínima del contenedor */
+
+    border-radius: 25px; /* Redondeado de los bordes */
+    border: 1px solid #ccc; /* Borde sólido */
+
+    margin: 50px auto 0; /* Margen superior de 50px y centrado horizontal */
+    
+    padding: 20px; /* Relleno interno */
+
+    background-color: #AFD4FF; /* Color de fondo */
+}
+
+.Content{
+    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Content p{
+    color: #223E92;
+    font-size: 23px;
+    padding-bottom: 15px;
+    
+}
+
+.Subtitle h2{
+    font-size: 40px;
+    font-weight: bold;
+    color: #223E92;
+}
+
+.Subtitle img{
+    width: 80px;
+    height: auto;
+}
+
+.Subtitle {
+    display: flex; /* Usar flexbox para el diseño */
+    align-items: center; /* Centrar verticalmente */
+    border-bottom: 1px solid #223E92;   
+}
+
+.Mayor-Edad label{
+    padding: 0 20px 0 5px;
+    font-size: 23px;
+    color: #142b6e;
+}
+
+.Mayor-Edad label, .Mayor-Edad input{
+    cursor: pointer;
+}
+
+.Mayor-Edad input[type="radio"] {
+    transform: scale(3.5); /* Escalar el tamaño del círculo */
+    margin-left: 18px; /* Separación entre el círculo y el texto */
+    margin-right: 20px; /* Espacio entre el círculo y el texto */
+}
+
+.Mayor-Edad {
+    display: flex; /* Convertir el contenedor en un contenedor flexible */
+    align-items: center; /* Alinear verticalmente los elementos */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.input-box{
+    display: flex;
+    flex-direction: column; /* Establecer la dirección del flujo a vertical */
+    align-items: flex-start; /* Alinear los elementos al inicio verticalmente */
+    padding-bottom: 10px;
+    width: 100%;
+    height: 100px;
+}
+
+.input-box label{
+    width: 95%;
+    color: #223E92;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.input-box input{
+    height: 60px;
+    width: 100%;
+    padding: 0 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.input-box input:is(:focus,:valid){
+    box-shadow:0 3px 6px rgba(0,0,0,0.2);
+}
+
+.button-container{
+    margin-top: 15px;
+    display: inline-block; /* Hace que el contenedor se ajuste al ancho de sus elementos hijos */
+}
+
+.btnRegister:hover{
+    background-color: #000000c2;
+    color: #FFF;
+}
+
+.btnRegister{
+    display: inline-block; /* Por si acaso, asegura que los elementos dentro del contenedor sean en línea */
+    width: 180px;
+    height: 50px;
+    font-weight: bold;
+    margin-right: 5px;
+    border-radius: 10px;
+    background-color:  #FFF;
+    font-size: 17px;
+    color:#000000;
+    transition: background-color 0.7s; /* Transición de color durante 0.5 segundos */
+}
+
+.btnLogin{
+    display: inline-block; /* Por si acaso, asegura que los elementos dentro del contenedor sean en línea */
+    
+    width: 180px;
+    height: 50px;
+    border-radius: 10px;
+    background-color:  #222BA8;
+
+    font-size: 17px;
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    border: 1px solid black;
+
+    text-align: center;
+    padding-top: 15px;
+
+    transition: background-color 0.2s; /* Transición de color durante 0.5 segundos */
+}
+
+.btnLogin:hover {
+    background-color:  #313571bc;
+}
+
+
+
+
+
+
+
+
+
+
