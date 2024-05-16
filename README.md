@@ -126,6 +126,16 @@ On the right side, the transaction history section displays a list of the user's
 
 ---
 
+## Demo Video
+
+Watch the demo video to see the full functionality of the SorteoGaming web interface, including the login, register, wallet management, and the three mini-games.
+
+[![Watch the video](https://img.youtube.com/vi/ZR34u1hkJ_M/maxresdefault.jpg)](https://youtu.be/ZR34u1hkJ_M)
+
+Click the image above or [here](https://youtu.be/ZR34u1hkJ_M) to watch the video.
+
+---
+
 
 
 
