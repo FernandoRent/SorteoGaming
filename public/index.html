@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SorteosTec</title>
+    <link rel="stylesheet" href="StylesHome.css"/>
+</head>
+<body>
+    <div class="main">
+        <header class="Encabezado">
+            <div class="Encabezado-Publicidad">
+                <p id="messageContainer">Prueba tu suerte 🍀 por solo $75 podrías ganar hasta $100,000</p>
+                <script src="MensajesPublicidad.js"></script>
+            </div>
+
+            <div class="Encabezado-Sorteos">
+                <a href="index.html">
+                    <img src="img/logo sorteos.png" style="width: 200px; height: auto;">
+                </a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="https://www.sorteostec.org/efectivoplus-triple/?t=mf">Sorteos</a></li>
+                    <li><a href="https://www.sorteostec.org/consulta-ganadores">Consulta de Ganadores</a></li>
+                    <li><a href="https://membresias.sorteostec.org/?_gl=1*euxmtf*_ga*MTkyOTI0MjA2Ny4xNzA3NzY5Njcy*_ga_Q4Y0X0B7ZK*MTcxMzQ3OTA2MC4xMC4xLjE3MTM0NzkyMzEuMjEuMC4zMDAwMDY0MjM.">Membresías de la suerte </a></li>
+                    <li><a href="https://www.sorteostec.org/nuestra_causa/?t=p">Nuestra Causa </a></li>                
+                </ul>
+                <div id="walletLives"></div>
+
+                <div id="loginContainer"></div>
+
+                <div id="logoutContainer">
+                   
+                </div>
+            </nav>
+            <div class="main-content">
+                <div class="main-content-text">
+                    <h1>¡Bienvenido a SorteosTec!</h1>
+                    <p>En SorteosTec podrás participar en sorteos de premios increíbles, desde $75 pesos podrás ganar hasta $100,000 pesos. ¡No pierdas la oportunidad de ganar!</p>
+                </div>
+            </div>
+            <div class="Titulo-juegos"><p>Nuestros Mini Juegos</p></div>
+
+        </header>
+
+
+        <div id="GameCards-Container">
+            <div class="GameCard">
+                <a href="ConduceyGana/index.html" target="_self">
+                    <img src="img/ConduceyGana.png" alt="Image 2">
+                </a>
+            </div>
+            <div class="GameCard">
+                <a href="Plinko/index.html" target="_self">
+                    <img src="img/plinko.png" alt="Image 2">
+                </a>
+            </div>
+            <div class="GameCard">
+                <a href="BorregoValiente/index.html" target="_self">
+                    <img src="img/BorregoValiente.png" alt="Image 3">
+                </a>
+            </div>
+        </div>
+
+    <script>
+     document.addEventListener('DOMContentLoaded', () => {
+    const loginContainer = document.getElementById('loginContainer');
+    const logoutContainer = document.getElementById('logoutContainer');
+    const walletLivesContainer = document.getElementById('walletLives');
+
+    async function fetchwalletInfo() {
+        const response = await fetch('http://localhost:3000/walletransactions');
+        const data = await response.json();
+        return data;
+    }
+
+    function updateWalletInfo() {
+        Promise.all([
+            fetch('http://localhost:3000/saldo').then(res => res.json()),
+            fetch('http://localhost:3000/vidas').then(res => res.json())
+        ]).then(([saldoData, vidasData]) => {
+            const walletSaldo = saldoData.saldo;
+            const userVidas = vidasData.vidas;
+            walletLivesContainer.innerHTML = `
+                <a href="newWallet.html" class="wallet">
+                <img class="WalletImg" src="img/wallet.jpg">
+                <p> $${walletSaldo}</p>
+                </a>
+                <a href="newWallet.html" class="lives">
+                <img class="WalletImg" src="img/lives.png">
+                <p> ${userVidas} VIDAS</p>
+                </a>`;
+        }).catch(error => {
+            console.error('Error fetching wallet info:', error);
+        });
+    }
+
+    function displayIndex() {
+        fetch('login_response.json',{  
+        headers: {
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0'
+        }})
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('login_response.json not found');
+            }
+        })
+        .then(data => {
+            const userName = data.userName;
+            loginContainer.innerHTML = `<a class="welcome">
+                                            <p>Welcome back, ${userName}!</p>
+                                        </a>`;
+            logoutContainer.innerHTML = `<a class="LoginNav" id="logoutBtn" href="http://localhost:8000/index.html">
+                                                <img class="LoginImg" src="img/perfil.png">
+                                                 <p> Cerrar Sesión</p>
+                                                </a>`;
+            document.getElementById('logoutBtn').addEventListener('click', logoutUser);
+            updateWalletInfo();
+        })
+        .catch(error => {
+            console.error('Error fetching JSON:', error);
+            loginContainer.innerHTML = `<a href="loginRegister.html" class="LoginNav">
+                                            <img class="LoginImg" src="img/perfil.png">
+                                            <p>INICIAR SESION</p>
+                                        </a>`;
+        });
+    }
+
+    function logoutUser() {
+        fetch('http://localhost:3000/logout', {
+            method: 'POST'
+        }).then(response => {
+            if (response.ok) {
+                // Clear session-specific UI elements
+                walletLivesContainer.innerHTML = '';
+
+                loginContainer.innerHTML = `<a href="loginRegister.html" class="LoginNav">
+                                                <img class="LoginImg" src="img/perfil.png">
+                                                <p>INICIAR SESION</p>
+                                            </a>`;
+                logoutContainer.innerHTML = '';
+                window.location.reload();
+            }
+        }).catch(error => {
+            console.error('Error logging out:', error);
+        });
+    }
+
+    displayIndex();
+    fetchwalletInfo();
+});
+
+    </script>
+</body>
+</html>
