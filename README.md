@@ -58,5 +58,37 @@ Adjacent to the login section is a register section for new users. This section 
 
 ---
 
+## Front Page
+
+The front page of the SorteoGaming web interface is designed to welcome users and provide easy access to various features and mini-games available on the platform.
+
+### Welcome Section
+
+The top section of the page welcomes users with a greeting and a brief description of the opportunities available at Sorteos Tec, encouraging them to participate in incredible prize draws.
+
+### Navigation Bar
+
+The navigation bar at the top provides quick access to different sections of the website, including:
+- **Sorteos**: Information about various draws.
+- **Consulta de Ganadores**: A section to check the winners.
+- **Membresías de la suerte**: Information about membership options.
+- **Nuestra Causa**: Details about the cause supported by Sorteos Tec.
+
+### User Profile
+
+On the right side of the navigation bar, logged-in users can see a personalized greeting and have the option to log out.
+
+### Game Cards
+
+The bottom section of the front page features cards for the three mini-games available on the platform. Each card provides a brief description and the cost to play the game. The available games are:
+- **Conduce y Gana**: Drive and win incredible prizes.
+- **Arroja y Gana**: Plinko-style game where you can throw and win.
+- **Borrego Valiente**: Brave sheep game with great prizes.
+
+![image](https://github.com/FernandoRent/SorteoGaming/assets/134562558/fcda9ca4-33ad-46eb-a539-0e8a46b397f5)
+
+---
+
+
 
 
