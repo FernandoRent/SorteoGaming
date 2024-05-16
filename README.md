@@ -89,6 +89,44 @@ The bottom section of the front page features cards for the three mini-games ava
 
 ---
 
+## Wallet Page
+
+The wallet page allows users to manage their funds, view transaction history, and handle other financial activities. Users can access this page by clicking on either the wallet icon with money or the heart icon from the front page.
+
+### User Greeting and Balance
+
+At the top left, the page greets the user by name and displays the current balance. Users can deposit funds into their account with the "Deposita" button.
+
+### Available Lives
+
+Next to the balance, the page shows the number of available lives (hearts) that the user has.
+
+### Catalog
+
+In the catalog section, users can purchase additional lives. The form includes:
+- **Life Price**: Display of the cost per life.
+- **Quantity Input**: A field to specify the number of lives to purchase.
+- **Purchase Button**: A button labeled "Compra" to complete the purchase.
+
+### Cards Management
+
+This section allows users to manage their linked cards:
+- **Add Card Button**: A button labeled "+ Agregar" to add a new card.
+- **Unlink Card Button**: A button labeled "- Desvincular" to remove an existing card.
+- **Linked Cards**: A list displaying the last four digits and expiry dates of the user's linked cards.
+
+### Transaction History
+
+On the right side, the transaction history section displays a list of the user's past transactions, including:
+- **Date**: The date of the transaction.
+- **Amount**: The amount involved in the transaction.
+- **Type**: The type of transaction (e.g., deposit, bet, purchase).
+
+![image](https://github.com/FernandoRent/SorteoGaming/assets/134562558/b63bdb83-ce51-46a6-a3ca-602a54342f90)
+
+---
+
+
 
 
 
