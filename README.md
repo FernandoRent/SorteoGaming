@@ -126,13 +126,120 @@ On the right side, the transaction history section displays a list of the user's
 
 ---
 
+## Admin Page
+
+The admin page allows administrators to manage and oversee different aspects of the website and the games. This section is accessible only to users with admin privileges and provides a tailored view to help administrators focus on what matters most.
+
+### Admin Dashboard
+
+The dashboard welcomes the administrator by name and provides navigation options to various management sections. The admin can access the following areas from the menu on the right:
+- **Rendimientos**: Performance metrics and reports.
+- **Engagement**: User engagement statistics.
+- **Juegos**: Management of the games, including updates and monitoring.
+- **Registro**: Options to register new admin profiles.
+
+The admin page helps streamline the management process, ensuring that administrators can efficiently oversee operations and make informed decisions.
+
+![image](https://github.com/FernandoRent/SorteoGaming/assets/134562558/3cfa9fd5-34b9-4471-ae8e-fa4e735c2ad1)
+
+
+---
+
+## Performance Page
+
+The performance page provides administrators with insights into various metrics and data related to the website and games. This page uses Looker Studio for detailed visualizations and graphs.
+
+### Deposits and Purchases
+
+The page features graphs that display:
+- **Deposits**: A graph showing the total amount of deposits over time.
+- **Purchases**: A graph showing the total amount of purchases, including lives and bets, over time.
+
+### Summary Metrics
+
+Below the graphs, there are summary metrics that provide quick insights into:
+- **Total Deposits**: The total amount of money deposited by users.
+- **Total Purchases**: The total amount of money spent on purchases by users.
+- **Average Deposit**: The average amount deposited by users.
+- **Average Purchase**: The average amount spent on purchases by users.
+- **Total Revenue**: The total revenue generated.
+- **Average User Spend**: The average amount spent per user.
+
+These visualizations help administrators monitor and analyze the financial performance of the platform, enabling informed decision-making and effective management.
+
+![image](https://github.com/FernandoRent/SorteoGaming/assets/134562558/ad787b5c-b4a5-4af0-ba7e-23fc23684cfe)
+
+---
+
+## Engagement Page
+
+The engagement page provides administrators with insights into user activity and interaction with the platform. This page uses Looker Studio to visualize engagement metrics and trends.
+
+### Engagement Metrics
+
+The page features various graphs that display:
+- **Últimas Conexiones (Recent Connections)**: A graph showing the number of user logins over time.
+- **Juegos per Día (Games per Day)**: A graph showing the number of games played each day.
+- **Edad de Jugadores (Player Ages)**: A pie chart showing the distribution of players' ages.
+- **Apuestas per Día (Bets per Day)**: A graph showing the number of bets placed each day.
+
+These visualizations help administrators understand user behavior and engagement patterns, allowing them to make data-driven decisions to enhance user experience and increase activity on the platform.
+
+![image](https://github.com/FernandoRent/SorteoGaming/assets/134562558/d6e71927-1729-4f8e-9635-58f06bb0e749)
+
+---
+
+## Games Page
+
+The games page provides administrators with detailed insights into the performance and statistics of the games on the platform. This page uses Looker Studio to visualize game-related metrics.
+
+### Game Metrics
+
+The page features various graphs that display:
+- **Puntos Conduce y Gana (Drive and Win Points)**: A graph showing the points scored in the "Conduce y Gana" game over time.
+- **Juegos Conduce y Gana (Drive and Win Games)**: A graph showing the number of times the "Conduce y Gana" game was played each day.
+- **Juegos por Estado (Games by State)**: A pie chart showing the distribution of games played by users from different states.
+- **Ganancias Apuestas (Cumulative Betting Winnings)**: A graph showing the cumulative winnings from bets over time.
+- **Avg Multiplicador (Average Multiplier)**: The average multiplier achieved in the games.
+
+These visualizations help administrators monitor game performance, understand player behavior, and make data-driven decisions to optimize the gaming experience.
+
+![image](https://github.com/FernandoRent/SorteoGaming/assets/134562558/22a13166-4828-4271-92d7-21ab8922df26)
+
+---
+
+## Admin Registration Page
+
+The admin registration page allows administrators to create new admin profiles. This page is designed to ensure that only authorized personnel can manage the platform.
+
+### Admin Profile Creation
+
+The page includes a form for registering a new admin profile. The form requires the following information:
+- **Nombre(s)**: First name(s) of the new admin.
+- **Apellido Paterno**: Paternal last name.
+- **Apellido Materno**: Maternal last name.
+- **Email**: Email address.
+- **Teléfono Móvil**: Mobile phone number.
+- **Fecha de Nacimiento**: Date of birth.
+- **Ciudad**: City.
+- **Estado**: State.
+- **Nombre de usuario**: Username.
+- **Contraseña**: Password.
+
+Administrators can fill out this form and click the "Registrar" button to create a new admin profile.
+
+![image](https://github.com/FernandoRent/SorteoGaming/assets/134562558/d6eb3549-09fe-47ef-a349-78b94c7235b7)
+
+
+---
+
 ## Demo Video
 
 Watch the demo video to see the full functionality of the SorteoGaming web interface, including the login, register, wallet management, and the three mini-games.
 
-[![Watch the video](https://img.youtube.com/vi/ZR34u1hkJ_M/maxresdefault.jpg)](https://youtu.be/ZR34u1hkJ_M)
+[![Watch the video](https://img.youtube.com/vi/ItPF_JcI3CQ/maxresdefault.jpg)](https://youtu.be/ItPF_JcI3CQ)
 
-Click the image above or [here](https://youtu.be/ZR34u1hkJ_M) to watch the video.
+Click the image above or [here](https://youtu.be/ItPF_JcI3CQ) to watch the video.
 
 ---
 
