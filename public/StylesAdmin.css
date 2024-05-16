@@ -1,0 +1,152 @@
+*{
+    padding:0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.Encabezado-Publicidad {
+    background-color: #000000;
+    color: #ffffff; /* Color del texto */
+    padding: 10px;
+    text-align: center; /* Centrar el texto */
+    font-size: 18px; /* Tamaño de la letra */
+    height: 43px;
+}
+
+.Encabezado-Sorteos {
+    background-color: #223E92; /* Color del fondo */
+    height: 90px; /* Altura de la caja */
+    padding-top: 23px; /* Tamaño del relleno en la parte superior */
+    padding-right: 20px; /* Tamaño del relleno en el lado derecho */
+    padding-bottom: 10px; /* Tamaño del relleno en la parte inferior */
+    padding-left: 53px; /* Tamaño del relleno en el lado izquierdo */
+}
+
+.navbar{
+    background: #BCDEFF;
+    height: 60px;
+    display: flex;
+}
+
+.LoginNav{
+    text-decoration: none;
+    font-size: 18px;
+    height: 100%;
+    margin-left: auto;
+    display: flex; /* Usar flexbox para el diseño */
+    align-items: center; /* Centrar verticalmente */
+    transition: background-color 0.3s; /* Transición de color durante 0.5 segundos */
+}
+
+.LoginNav:hover{
+    background-color: white;
+}
+
+.LoginImg {
+    width: 40px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    height: auto;
+    vertical-align: middle; /* Alinea verticalmente la imagen */
+}
+
+.LoginNav p {
+    font-weight: bold;
+    display: inline-block;
+    margin: 0; /* Quita el margen del párrafo */
+    vertical-align: middle; /* Alinea verticalmente el texto con la imagen */
+    padding-right: 10px;
+}
+
+.main{
+    background-color: #f0f0f0;
+    min-height: 1020px;
+}
+
+.Container {
+    width: 1700px; /* Ancho del contenedor */
+    min-height: 10px; /* Altura mínima del contenedor */
+
+    border-radius: 25px; /* Redondeado de los bordes */
+
+    margin: 50px auto 0; /* Margen superior de 50px y centrado horizontal */
+    
+    padding: 20px; /* Relleno interno */
+
+    /*border: 1px solid black;*/
+    display: flex;
+    flex-direction: column;
+}
+
+.Container h1{
+    font-size: 40px;
+    font-weight: bold;
+    color: #223E92;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 4px solid #223E92;  
+}
+
+.Content{
+    width: 100%; /* Ancho del contenedor */
+    min-height: 10px; /* Altura mínima del contenedor */
+    display: flex;
+    flex-direction: column;   
+}
+
+.Active-Members{
+    display:flex;
+    width:100%;
+    /*border: 1px solid black;*/
+    min-height: 100px; /* Altura mínima del contenedor */
+    margin-bottom: 20px;
+}
+
+.Active-Members-Box{
+    width:25%;
+    min-height: 50px; /* Altura mínima del contenedor */
+    padding: 15px; /* Relleno interno */
+    margin-right: 30px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5); 
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.Active-Members-Box:hover{
+    transform: scale(1.05);
+}
+
+.Active-Members-Box:first-child {
+    font-size: 17px;
+    color: white;
+    font-weight: bold;
+    background-color: #67A4D0;
+}
+.Active-Members-Box:nth-child(2) {
+    font-size: 17px;
+    color: white;
+    font-weight: bold;
+    background-color: tomato;
+}
+.Active-Members-Box:nth-child(3) {
+    font-size: 17px;
+    color: white;
+    font-weight: bold;
+    background-color: #1d9e75;
+}
+/* Elimina el margen derecho del último elemento */
+.Active-Members-Box:last-child {
+    margin-right: 0;
+    font-size: 17px;
+    color: black;
+    font-weight: bold;
+    background-color: #c1e038;
+}
+
+.Income-Graph{
+    width: 100%; /* Ancho del contenedor */
+    min-height: 300px; /* Altura mínima del contenedor */
+    /*border: 1px solid black;*/
+    background-color: white;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5); 
+    border-radius: 5px;
+}

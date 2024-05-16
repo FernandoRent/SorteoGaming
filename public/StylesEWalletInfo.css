@@ -1,0 +1,506 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.Encabezado-Publicidad {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    height: 43px;
+}
+
+.Encabezado-Sorteos {
+    background-color: #223E92;
+    height: 90px;
+    padding: 23px 20px 10px 53px;
+}
+
+
+.navbar {
+    background: #BCDEFF;
+    height: 60px;
+    display: flex;
+    text-align: left;
+}
+
+.navbar ul {
+    margin-left: 50px;
+    height: 60px;
+    width: 800px;
+    display: flex;
+    list-style-type: none;
+    text-align: left;
+    margin-left: 0;
+}
+
+.navbar li {
+    display: flex;
+    height: 100%;
+}
+
+.navbar a {
+    text-decoration: none;
+    height: 100%;
+    color: rgb(27, 53, 137);
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    padding: 25px 10px;
+}
+
+.navbar ul li {
+padding: 0 .5em .25em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+  
+}
+
+.navbar ul li:hover {
+    color: #fff;
+}
+
+    .navbar ul li:before {
+    content: "";
+    position: absolute;
+    inset: calc(100% - 3px) 0 0 0; /* 3px = the thickness */
+    background:#223E92; /* the color */
+    scale: 0 1;
+    transition: .3s, translate 0s .3s;
+  }
+  .navbar ul:hover li:before {
+    scale: 1;
+  }
+  .navbar ul li:hover:before {
+    translate: 0;
+    transition: .3s;
+  }
+    .navbar :hover li:has(~ li:hover):before {
+    translate: 100% 0;
+    transition: .2s .2s,scale 0s .4s;
+
+}
+.navbar :hover li:hover ~ li:before {
+    translate: -100% 0;
+    transition: .2s .2s,scale 0s .4s;
+}
+
+.LoginNav {
+    text-decoration: none;
+    font-size: 18px;
+    height: 100%;
+    padding-right: 40px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+    margin-right: 20px;
+    padding: 40px;
+}
+
+
+
+.LoginImg {
+    width: 40px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.LoginNav p {
+    font-weight: bold;
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+    padding-right: 10px;
+}
+
+.main {
+    background-color: #f0f0f0;
+    min-height: 1020px;
+}
+
+.ewallet-container {
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.info-ewallet h2 {
+    color: #000;
+    margin-bottom: 10px;
+    font-size: 48px;
+}
+
+.info-ewallet hr {
+    border: none;
+    height: 2px;
+    background-color: #000;
+    margin-bottom: 20px;
+}
+
+.botones-ewallet {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.botones-ewallet button {
+    background-color: #223E92;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 25px;
+    padding: 35px 30px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    flex: 1;
+}
+
+.botones-ewallet button:not(:last-child) {
+    margin-right: 10px;
+}
+
+.botones-ewallet button:hover {
+    background-color: #1a3178;
+}
+
+.contenido-ewallet {
+    display: flex;
+    background-color: #E0E0E0;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    gap: 20px; /* Ajusta el espacio entre contenedores */
+}
+
+/* Estilos para el contenedor de tarjetas registradas */
+.tarjetas-registradas {
+    background-color: white;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 70%; /* Ajuste de ancho para el contenedor de tarjetas */
+}
+
+/* Estilos para la lista de tarjetas */
+#listaTarjetas p {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 18px; /* Aumentar el tamaño de fuente si es necesario */
+}
+
+/* Ajustes para los botones de registrar y borrar */
+.acciones-tarjetas {
+    background-color: white;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Ajuste de ancho para el contenedor de acciones */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar botones */
+}
+
+/* Estilos para los botones */
+button {
+    background-color: #223E92;
+    color: white;
+    padding: 15px 25px; /* Ajustar el padding para cambiar el tamaño */
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px; /* Espacio entre botones */
+    cursor: pointer;
+    font-size: 18px; /* Tamaño de fuente para los botones */
+    width: auto; /* Ancho automático basado en contenido */
+}
+
+button:hover {
+    background-color: #1a3178;
+}
+button:last-child {
+    margin-right: 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%; /* Ajustar según el diseño */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#registroForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#registroForm label,
+#registroForm input,
+#registroForm button {
+    margin-bottom: 10px;
+}
+
+#registroForm input,
+#registroForm button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#registroForm button {
+    background-color: #223E92;
+    color: white;
+    cursor: pointer;
+}
+
+#registroForm button:hover {
+    background-color: #1a3178;
+}
+
+.tarjeta-item.seleccionada {
+    background-color: #968d8d;
+  }
+
+  
+  .selected {
+    background: color #888;; /* Cambia esto según tu esquema de colores, asegurándote de que sea visible */
+}
+
+/* Estilos específicos para la sección Depositar */
+#contenidoDepositar {
+  background-color: #fff; /* Fondo blanco para el contenedor */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrado vertical de los elementos */
+  gap: 20px; /* Espacio entre elementos */
+  width: 100%; /* Ancho completo */
+}
+
+#contenidoDepositar label {
+  font-size: 20px; /* Tamaño de fuente más grande para las etiquetas */
+}
+
+#contenidoDepositar select,
+#contenidoDepositar input {
+  width: 70%; /* Ancho para select e inputs */
+  padding: 10px;
+  margin-bottom: 10px; /* Espaciado inferior */
+  border: 1px solid #ccc; /* Bordes más claros */
+  border-radius: 4px;
+}
+
+/* Botón Depositar más grande y estilizado */
+#btnDepositarCantidad {
+  font-size: 18px;
+  padding: 10px 30px;
+  background-color: #004a99; /* Color más oscuro para el botón */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s; /* Transición suave al cambiar el color */
+}
+
+#btnDepositarCantidad:hover {
+  background-color: #003366; /* Color al pasar el cursor */
+}
+
+/* Para centrar el texto y agregar espacio alrededor */
+#contenidoDepositar .depositar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Secciona y centra cada parte del formulario */
+#contenidoDepositar .select-tarjeta,
+#contenidoDepositar .saldo-total,
+#contenidoDepositar .cantidad-depositar {
+  width: 100%; /* Ocupar todo el ancho posible */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Oculta las etiquetas para tener solo el placeholder */
+#contenidoDepositar label {
+  display: none; /* Oculta las etiquetas */
+}
+
+/* Ajusta el ancho del botón para que coincida con los inputs */
+#contenidoDepositar button {
+  width: calc(70% + 20px); /* Ancho más el padding */
+}
+
+.hidden {
+   display: none;
+}
+
+#contenidoDepositar.hidden {
+    display: none !important;
+    /* otros estilos */
+}
+
+/* Estilo del switch (interruptor) */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Estilo redondeado */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.ewallet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-button {
+    padding: 10px 20px;
+    margin-left: 10px; /* Espacio entre los botones y el título */
+    font-size: 16px;
+    color: #fff;
+    background-color: #223E92;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.info-button:hover {
+    background-color: #0056b3;
+}
+
+#loginContainer, .LoginNav{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    gap:20px;
+    justify-content: center;
+
+}
+
+
+
+a.wallet, a.lives {
+    border-radius: 40px;
+    border: 3px solid rgb(17, 32, 163);
+    height: 80%;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding: 20px;
+}
+
+.WalletImg, .LoginImg {
+    width: 40px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.welcome p, .wallet p, .lives p {
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 10px;
+    text-align: center;
+    justify-content: center;
+
+}
+
+/* Asegurarse de que el título y los botones estén alineados en dispositivos más pequeños */
+@media (max-width: 768px) {
+    .ewallet-header {
+        flex-wrap: wrap;
+    }
+    .header-buttons {
+        margin-top: 10px; /* Espacio adicional en caso de que los elementos se apilen */
+    }
+}

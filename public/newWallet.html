@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="StylesEWalletInfo.css" />
+    <link rel="stylesheet" href="walletStyles.css" />
+    <script src="newEwallet.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="Encabezado">
+        <div class="Encabezado-Publicidad">
+            <p id="messageContainer">Administra tu E-Wallet y aumenta tus oportunidades 🚀</p>
+        </div>
+        <div class="Encabezado-Sorteos">
+            <a href="index.html">
+                <img src="img/logo sorteos.png" alt="Sorteos Tec logo" style="width: 200px; height: auto;">
+            </a>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="https://www.sorteostec.org/efectivoplus-triple/?t=mf">Sorteos</a></li>
+                <li><a href="https://www.sorteostec.org/consulta-ganadores">Consulta de Ganadores</a></li>
+                <li><a href="https://membresias.sorteostec.org/?_gl=1*euxmtf*_ga*MTkyOTI0MjA2Ny4xNzA3NzY5Njcy*_ga_Q4Y0X0B7ZK*MTcxMzQ3OTA2MC4xMC4xLjE3MTM0NzkyMzEuMjEuMC4zMDAwMDY0MjM.">Membresías de la suerte </a></li>
+                <li><a href="https://www.sorteostec.org/nuestra_causa/?t=p">Nuestra Causa </a></li>                
+            </ul>
+            <a href="index.html" class="LoginNav">
+                <p>HOME</p>
+            </a>
+        </nav>
+    </header>
+    <div id="popup-form" class="popup-container" style="display: none;">
+        <form class="popup-content" action="http://localhost:3000/deposito" method="POST">
+            <h2>Deposita</h2>
+            <div class="vert tarjetasCon dropdown">
+            <label for="tarjetasDropdown">Tarjeta</label>
+            <select id="tarjetasDropdown" name="tarjetasDropdown" >
+            </select>
+             </div>
+            <input type="number" id="cant" name="depositAmount"  placeholder="Cantidad" min="1" max="999999999" required>
+                <div class="btnForm">
+                    <button id="btnDepositar" type="button" onclick="togglePopup()">Cerrar</button>
+                    <button type="submit">Completar</button>
+                </div>
+        </form>
+    </div>
+    <div id="popup-form2" class="popup-container2" style="display: none;"> 
+        <form class="popup-content n2" action="http://localhost:3000/newtarjeta" method="POST">
+            <input type="text" pattern="\d{16}" id="cardNumber" name="numeroCuenta" placeholder="Numero de Tarjeta" required title="Please enter a 16-digit card number.">
+                <div>
+                    <input type="text" id="expirationDate" name="fechaVigencia" placeholder="MM/YY" required>
+                    <input type="number" id="cvv" name="cvv" placeholder=" CVV" required>
+                </div>
+                    <input type="text" id="cardholderName" name="nombreCompleto" placeholder="Titular" required>
+            <div class="container">
+                <button type="button" onclick="togglePopup2()">Cerrar</button>
+                <button type="submit">Completar</button>
+            
+            </div>
+             </div>
+        </form>
+    </div>
+    <div id="popup-form3" class="popup-container" style="display: none;">
+    <form class="popup-content">
+            <h2>Desvincula</h2>
+            <label for="tarjetasDropdown2">Tarjeta</label>
+            <select class="tarjetasDropdown" id="tarjetasDropdown2" name="tarjetasDropdown2" >
+            </select>
+            <div class="btnForm">
+                <button id="btnCerrar" type="button" onclick="togglePopup3()">Cerrar</button>
+                <button id="btnConfirmarBorrado" >Confirmar</button>
+             </div>
+        </form>
+    </div>
+    <div class="background">
+    <div class="main">
+        <div class="container vert">
+            <div class="container saldo">
+                <p id="nombreUsuario" class="saldoTit"></p>
+                    <div class="container saldoVid">
+                        <div class="container valBtn">
+                        <p id="EwalletSaldo" class="saldoVal"></p>
+                         <button class="anadirTar sal" onclick='togglePopup()'> Deposita</button>
+                        </div>
+                        <div class="container vidas">
+                            <img src="img/lives.png" alt="Vidas" class="imgVid" height="40px" width="auto">
+                            <p id="EwalletLives" class="vidasCont "></p>
+                            
+                        </div>
+                     </div>
+                     <div class="container saldoVid">
+                        <p class="mensajeSal">Saldo disponible</p>
+                        <p class="mensajeSal">Vidas Disponibles </p>
+                     </div>
+                
+            </div>
+            <div class="container saldo cat">
+                <p class="saldoTit ">Catálogo</p>
+                <div class="container vidasImg">
+                <img src="img/lives.png" alt="Vidas" class="imgCat" height="40px" width="auto">
+                <p class="catCont ">Vida $10.00</p>
+                </div>
+                <form class="container vert comprarVid" >
+                <input type="number" name="vidasAmount"  placeholder="Cantidad">
+                <button type="submit" class="btnCat">Compra</button>
+                </form>
+            </div>
+
+        <div class="container vert tarjetas">
+            <p class="tituloTar">Tus Tarjetas</p>
+            <button class="anadirTar" onclick="togglePopup2()">+ Agregar</button>
+            <button class="anadirTar" onclick="togglePopup3()">- Desvincular</button>
+
+            <div id="containerTarjetasRegistradas" class="container vert tarjetasCon">
+                
+            </div>
+        </div>
+
+    </div>
+    <div class="container hor ">
+        <div class="container vert tarjetas">
+        <p class="tituloTar">Historial de movimientos</p>
+        <div id="containerHistorialMovimientos" class="container vert tarjetasCon histmov">
+
+        </div>
+
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>

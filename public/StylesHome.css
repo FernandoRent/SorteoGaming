@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat';
+    box-sizing: border-box;
+}
+
+.main{
+    background-color:rgb(27, 53, 137); ;
+}
+
+.Encabezado-Publicidad {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    height: 43px;
+}
+
+.Encabezado-Sorteos {
+    background-color: rgb(27, 53, 137);
+    height: 90px;
+    padding: 23px 20px 10px 53px;
+}
+
+.navbar {
+    background: #BCDEFF;
+    height: 60px;
+    display: flex;
+    text-align: left;
+}
+
+.navbar ul {
+    margin-left: 50px;
+    height: 60px;
+    width: 800px;
+    display: flex;
+    list-style-type: none;
+    text-align: left;
+    margin-left: 0;
+}
+
+.navbar li {
+    display: flex;
+    height: 100%;
+}
+
+.navbar a {
+    text-decoration: none;
+    height: 100%;
+    color: rgb(27, 53, 137);
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    padding: 25px 10px;
+}
+
+.navbar ul li {
+padding: 0 .5em .25em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+  
+}
+
+.navbar ul li:hover {
+    color: #fff;
+}
+
+    .navbar ul li:before {
+    content: "";
+    position: absolute;
+    inset: calc(100% - 3px) 0 0 0; /* 3px = the thickness */
+    background:#223E92; /* the color */
+    scale: 0 1;
+    transition: .3s, translate 0s .3s;
+  }
+  .navbar ul:hover li:before {
+    scale: 1;
+  }
+  .navbar ul li:hover:before {
+    translate: 0;
+    transition: .3s;
+  }
+    .navbar :hover li:has(~ li:hover):before {
+    translate: 100% 0;
+    transition: .2s .2s,scale 0s .4s;
+
+}
+.navbar :hover li:hover ~ li:before {
+    translate: -100% 0;
+    transition: .2s .2s,scale 0s .4s;
+}
+  
+
+#loginContainer, .LoginNav, #walletLives{
+    height: 100%;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    gap:20px;
+    justify-content: center;
+
+}
+
+
+
+a.wallet, a.lives {
+    border-radius: 40px;
+    border: 3px solid rgb(17, 32, 163);
+    height: 80%;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding: 20px;
+}
+
+.WalletImg, .LoginImg {
+    width: 40px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.welcome p, .wallet p, .lives p {
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 10px;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.welcome{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 250px;
+    color: rgb(27, 53, 137);
+    background-color: #f0f0f0;
+}
+.main-content h1{
+    font-size: 40px;
+    font-weight: bold;
+    color: #223E92;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-content p{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.Titulo-juegos{
+    font-size: 35px;
+    font-weight: bold;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+}
+
+
+#GameCards-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background: linear-gradient(to bottom, #a8c9ef, #193aa3);
+}
+
+
+
+.GameCard {
+    margin-right: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.GameCard:hover {
+    transform: scale(1.1);
+}
+
+.GameCard img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 40px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
